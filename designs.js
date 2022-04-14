@@ -10,9 +10,9 @@ const reset = document.querySelector("#reset");
 
 // When size is submitted by the user, call makeGrid()
 
-let height = inputHeight.value;
-let width = inputWidth.value;
-let color = colorPicker.value;
+let height;
+let width;
+let color;
 
 inputHeight.onchange = (e) => {
   height = inputHeight.value;
@@ -20,20 +20,22 @@ inputHeight.onchange = (e) => {
 inputWidth.onchange = (e) => {
   width = inputWidth.value;
 };
-colorPicker.onchange = (e) => {
+colorPicker.oninput = (e) => {
+  console.log(e.target.value);
   color = colorPicker.value;
 };
 
-
 submit.onclick = (e) => {
   e.preventDefault();
-//   console.log(`
-//     height: ${height}
-//     width: ${width}
-//     color: ${color}
-//     `);
-  makeGrid();
-  e.target.disabled = "true";
+  console.log(`
+    height: ${height}
+    width: ${width}
+    color: ${color}
+    `);
+  if (height && width && color) {
+    makeGrid();
+    e.target.disabled = "true";
+  }
 };
 
 // function to create colored Grid
@@ -50,7 +52,7 @@ function makeGrid() {
     }
   }
 
-//   function to clear out the grid
+  //   function to clear out the grid
   function clearElement(parent) {
     submit.disabled = false;
     while (parent.firstChild) {
@@ -60,6 +62,4 @@ function makeGrid() {
   reset.addEventListener("click", () => {
     clearElement(pixelCanvas);
   });
-
-
 }
