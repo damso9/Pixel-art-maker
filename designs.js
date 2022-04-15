@@ -1,9 +1,11 @@
 // Select color input
 const colorPicker = document.querySelector("#colorPicker");
+// I Appreciate the REVIEW. Thanks for the encouragement. It means a lot! - I'll be pleased to connect  -https://www.linkedin.com/in/damilola-ayodele/
+// I Appreciate the REVIEW. Thanks for the encouragement. It means a lot! - I'll be pleased to connect - https://www.linkedin.com/in/damilola-ayodele/
 
 // Select size input
-const inputHeight = document.querySelector("#inputHeight");
-const inputWidth = document.querySelector("#inputWidth");
+const inputWidth = document.querySelector("#inputRow");
+const inputHeight = document.querySelector("#inputColumn");
 const submit = document.querySelector("#submit");
 const pixelCanvas = document.querySelector("#pixelCanvas");
 const reset = document.querySelector("#reset");
@@ -27,18 +29,17 @@ colorPicker.oninput = (e) => {
 
 submit.onclick = (e) => {
   e.preventDefault();
-  console.log(`
-    height: ${height}
-    width: ${width}
-    color: ${color}
-    `);
   if (height && width && color) {
     makeGrid();
     e.target.disabled = "true";
   }
 };
 
-// function to create colored Grid
+// I Appreciate the REVIEW. Thanks for the encouragement I means a lot! - Damilola Ayodele!
+/*
+// @makeGrid function - creates a pixel like grid which contains
+td element nested in tr using nested lOOPs!
+*/
 function makeGrid() {
   for (let i = 1; i <= width; i++) {
     let row = document.createElement("tr");
